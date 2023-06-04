@@ -26,9 +26,11 @@ def messagesTreatement(cliente):
 
     while True:
         try:
-            msg = cliente.recv(2048)
+            print("Conectado...")
+            msg = cliente.recv(4096)
             broadcast(msg, cliente)
-        except:
+        except Exception as e:
+            print("Exception: "+str(e))
             deleteClient(cliente)
             break
 
