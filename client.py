@@ -3,12 +3,8 @@ import socket
 from cryptography.fernet import Fernet
 import pickle
 
-chave = Fernet.generate_key() #GERA UMA CHAVE RANDÔMICA
+chave = Fernet.generate_key()
 f = Fernet(chave) 
-# filehandler = open('chave.key', 'wb')
-# pickle.dump(f, filehandler)
-# filehandler.close()
-
 file = open('chave.key', 'rb')
 chave_lida = pickle.load(file)
 file.close()
